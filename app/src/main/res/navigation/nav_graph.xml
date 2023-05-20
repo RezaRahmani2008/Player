@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashScreenFragment">
+
+    <fragment
+        android:id="@+id/viewPagerFragment"
+        android:name="com.example.musicplayer.ViewPagerFragment"
+        android:label="fragment_view_pager"
+        tools:layout="@layout/fragment_view_pager" />
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.example.musicplayer.SplashScreenFragment"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreenFragment_to_viewPagerFragment"
+            app:destination="@id/viewPagerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ALLMusiceFragment"
+        android:name="com.example.musicplayer.ALLMusiceFragment"
+        android:label="fragment_a_l_l_musice"
+        tools:layout="@layout/fragment_a_l_l_musice" >
+        <action
+            android:id="@+id/action_ALLMusiceFragment_to_currentPlayingFragment"
+            app:destination="@id/currentPlayingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteSongsFragment"
+        android:name="com.example.musicplayer.FavoriteSongsFragment"
+        android:label="fragment_favorite_songs"
+        tools:layout="@layout/fragment_favorite_songs" >
+        <action
+            android:id="@+id/action_favoriteSongsFragment_to_currentPlayingFragment"
+            app:destination="@id/currentPlayingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/currentPlayingFragment"
+        android:name="com.example.musicplayer.CurrentPlayingFragment"
+        android:label="fragment_current_playing"
+        tools:layout="@layout/fragment_current_playing" />
+</navigation>
