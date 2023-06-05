@@ -9,7 +9,11 @@
         android:id="@+id/viewPagerFragment"
         android:name="com.example.musicplayer.ViewPagerFragment"
         android:label="fragment_view_pager"
-        tools:layout="@layout/fragment_view_pager" />
+        tools:layout="@layout/fragment_view_pager" >
+        <action
+            android:id="@+id/action_viewPagerFragment_to_currentPlayingFragment"
+            app:destination="@id/currentPlayingFragment" />
+    </fragment>
     <fragment
         android:id="@+id/splashScreenFragment"
         android:name="com.example.musicplayer.SplashScreenFragment"
