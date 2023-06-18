@@ -3,14 +3,10 @@ package com.example.musicplayer
 import android.content.ContentUris
 import android.content.Context
 import android.database.Cursor
-import android.graphics.BitmapFactory
 import android.net.Uri
 import android.provider.MediaStore
-import androidx.datastore.dataStoreFile
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
-import androidx.datastore.preferences.preferencesDataStore
-import com.bumptech.glide.disklrucache.DiskLruCache.Value
 import com.google.android.exoplayer2.ExoPlayer
 import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.Player
@@ -18,7 +14,8 @@ import kotlinx.coroutines.flow.first
 
 import model.Music
 
-
+var userValue = ""
+var userKey = "${userValue}!@${userValue}"
 fun getAllAudioFromDevice(context: Context) {
     val uri: Uri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
     val projection = arrayOf(
@@ -85,8 +82,17 @@ suspend fun deleteFromDataStore(context: Context, key: String) {
     }
 }
 
-suspend fun readFromDataStore(context: Context, key: String):String? {
+  suspend fun readFromDataStore(context: Context, key: String):String? {
         val preferencesKey = stringPreferencesKey(key)
         val preferences = context.datastore.data.first()
-        return preferences[preferencesKey]
-}
+      return preferences[preferencesKey]
+
+      val existingValue = readFromDataStore(context, userKey)
+      if (existingValue != null) {
+          snackBar = true
+          } else {
+          writeToDataStore(context, userKey, userValue)
+          snackBar = false
+
+  }}
+

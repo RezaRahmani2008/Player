@@ -20,8 +20,8 @@
         android:label="fragment_splash_screen"
         tools:layout="@layout/fragment_splash_screen" >
         <action
-            android:id="@+id/action_splashScreenFragment_to_viewPagerFragment"
-            app:destination="@id/viewPagerFragment" />
+            android:id="@+id/action_splashScreenFragment_to_loginPageFragment"
+            app:destination="@id/loginPageFragment" />
     </fragment>
     <fragment
         android:id="@+id/ALLMusiceFragment"
@@ -46,4 +46,13 @@
         android:name="com.example.musicplayer.CurrentPlayingFragment"
         android:label="fragment_current_playing"
         tools:layout="@layout/fragment_current_playing" />
+    <fragment
+        android:id="@+id/loginPageFragment"
+        android:name="com.example.musicplayer.loginPageFragment"
+        android:label="fragment_login_page"
+        tools:layout="@layout/fragment_login_page" >
+        <action
+            android:id="@+id/action_loginPageFragment_to_viewPagerFragment"
+            app:destination="@id/viewPagerFragment" />
+    </fragment>
 </navigation>

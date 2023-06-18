@@ -27,7 +27,7 @@
         android:textSize="17dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/artistTV"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/count"
         app:layout_constraintStart_toEndOf="@+id/coverArt"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -41,8 +41,17 @@
         android:textColor="#706F6F"
         android:textSize="13dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/count"
         app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toEndOf="@+id/coverArt" />
+
+    <TextView
+        android:id="@+id/count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
